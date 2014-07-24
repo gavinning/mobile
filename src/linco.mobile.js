@@ -8,7 +8,8 @@ linco.extend({
 			up		: function(){},
 			down	: function(){},
 			left	: function(){},
-			right	:  function(){}
+			right	: function(){},
+			callback: function(){}
 		};
 
 		// 合并参数
@@ -50,8 +51,7 @@ linco.extend({
 		    startX = ev.touches[0].pageX;
 		    startY = ev.touches[0].pageY;
 
-		    ev.stopPropagation();
-		    ev.preventDefault();
+		    opt.callback(ev);
 		}, false);
 
 		document.addEventListener('touchend', function (ev) {
