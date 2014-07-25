@@ -5,6 +5,7 @@ linco.extend({
 	touchMove: function(opt){
 		var startX, startY;
 		var options = {
+			click	: function(){},
 			up		: function(){},
 			down	: function(){},
 			left	: function(){},
@@ -61,7 +62,7 @@ linco.extend({
 		    var direction = GetSlideDirection(startX, startY, endX, endY);
 		    switch (direction) {
 		        case 0:
-		            console.log("没滑动");
+		            opt.click();
 		            break;
 		        case 1:
 		            opt.up();
